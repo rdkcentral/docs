@@ -44,7 +44,7 @@ Note: for git actions (clone/push/pr) you need to select at least the following 
 
 repo write:packages
 
-![Scope Selection](https://github.com/rdkcentral/docs/tree/main/docs/support/images/PAT-settings.png)
+![Scope Selection](https://github.com/rdkcentral/docs/blob/main/docs/support/images/PAT-settings.png)
 
 ___
 

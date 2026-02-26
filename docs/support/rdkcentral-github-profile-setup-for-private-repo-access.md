@@ -23,12 +23,12 @@ If you do not already have a rdkcentral id then please sign up here: https://wik
 https://wiki.rdkcentral.com/users/viewmyprofile.action
 
 
-![RDKCentral Profile](https://github.com/rdkcentral/docs/tree/main/docs/support/images/RDKCentralProfile.png)
+![RDKCentral Profile](https://github.com/rdkcentral/docs/blob/main/docs/support/images/RDKCentralProfile.png)
 
 
 **STEP 2: Click on "Edit Profile"**
 
-![RDKCentral User Profile](https://github.com/rdkcentral/docs/tree/main/docs/support/images/RDKCentralUserProfile.jpg)
+![RDKCentral User Profile](https://github.com/rdkcentral/docs/blob/main/docs/support/images/RDKCentralUserProfile.jpg)
 
 
 **STEP 3: Enter your RDK Central public Github username:**
@@ -39,13 +39,13 @@ https://wiki.rdkcentral.com/users/viewmyprofile.action
 
 Do not simply fill this field in with your comcast ID, it is only applicable if you have an active GHEC account, again f in doubt leave it blank and raise a CMF-SUPPORT ticket requesting the invite.</font>
 
-![RDKCentral Edit Profile](https://github.com/rdkcentral/docs/tree/main/docs/support/images/RDKCentralEditProfile.png)
+![RDKCentral Edit Profile](https://github.com/rdkcentral/docs/blob/main/docs/support/images/RDKCentralEditProfile.png)
 
 **STEP 4: Press Save**
 
 Once saved the new settings will appear in your profile.
 
-![RDKCentral Saved Profile](https://github.com/rdkcentral/docs/tree/main/docs/support/images/RDKCentralProfileAfterSave.png)
+![RDKCentral Saved Profile](https://github.com/rdkcentral/docs/blob/main/docs/support/images/RDKCentralProfileAfterSave.png)
 
 
 **STEP 5: GitHub invite**
