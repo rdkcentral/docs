@@ -27,7 +27,7 @@ So if a component owner wishes to populate a new repo using direct push then the
 ## Gerrit New Repository Request
 To create a new repository on **RDK Central Gerrit**, raise a **CMFSUPPORT** ticket and select **New Repository Request** ticket type.
 
-![New Rep Jira](https://github.com/rdkcentral/docs/tree/main/docs/support/images/NewRepo-Jira.png)
+![New Rep Jira](https://github.com/rdkcentral/docs/blob/main/docs/support/images/NewRepo-Jira.png)
 
 **Each repo requires its own ticket.**
 
