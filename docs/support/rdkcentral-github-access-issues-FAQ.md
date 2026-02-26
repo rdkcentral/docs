@@ -18,7 +18,7 @@ Please Note RDK Central Github https://github.com/rdkcentral uses a pubic Github
 
 If you have multiple GitHub accounts, e.g. public account(s) and a corporate enterprise account use the GitHub account switcher to make sure you are on the correct account before making any changes, just click the account switcher arrows.
 
-![Switcher](https://github.com/rdkcentral/docs/tree/main/docs/support/images/GithubAccountSwitcher.png)
+![Switcher](https://github.com/rdkcentral/docs/blob/main/docs/support/images/GithubAccountSwitcher.png )
 
 
 If you raise a support ticket please ensure you tell us your **public GitHub username** and any **repositories** you are having issues accessing.
