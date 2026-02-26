@@ -104,7 +104,7 @@ The CMF Team have created some useful FAQs and Guides that should be referenced 
 - [RDKCentral GitHub Profile Setup For Elevated and Private Repository Privileges](https://github.com/rdkcentral/docs/wiki/rdkcentral-github-profile-setup-for-private-repo-access)
 - [RDKCentral Opensourcing Guidelines](https://github.com/rdkcentral/docs/wiki/opensource-guidelines)
 - [RDKCentral Community Opensourcing Process](https://github.com/rdkcentral/docs/wiki/community-opensourcing-process)
-- [RDKCentral Internal Opensourcing Process]https://github.com/rdkcentral/docs-internal/wiki/internal-opensourcing-process) (_Internal_)
+- [RDKCentral Internal Opensourcing Process](https://github.com/rdkcentral/docs-internal/wiki/internal-opensourcing-process) (_Internal_)
 
 > **Note:** If your support request requires implementation work, a **ticket must be created** to allow for planning and tracking.
 
