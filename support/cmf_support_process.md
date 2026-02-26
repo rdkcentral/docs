@@ -98,12 +98,11 @@ The CMF Team have created some useful FAQs and Guides that should be referenced 
 **FAQs**
 - [RDKCentral New Repository And Repository Access FAQ](NewRepositoryAndRepositoryAccessRequestFAQ.md)
 - [RDKCentral GitHub Access Issues FAQ](RDKCentralGitHubAccessIssuesFAQ.md)
-- [RDKCEntral GitHub Coverity Integration FAQ](https://github.com/rdkcentral/docs-cmf/blob/main/docs/coverity/coverity_faq.md])
+- [RDKCEntral GitHub Coverity Integration FAQ](https://github.com/rdkcentral/docs-internal/tree/main/docs/coverity])
 
 **Guides**
 - [RDKCentral GitHub Profile Setup For Elevated and Private Repository Priveleges](RDKCentralGitHubProfileSetupForPrivateRepoAccess.md)
-- [RDKCentral GitHub Coverity Integration Requirements](https://github.com/rdkcentral/docs-cmf/blob/main/docs/coverity/coverity.md)
-- [RDKCentral Opensourcing Process](https://github.com/rdkcentral/docs-cmf/blob/main/docs/opensourcing/internal-opensourcing-process.md)
+- [RDKCentral Opensourcing Process](https://github.com/rdkcentral/docs-internal/tree/main/docs/opensourcing))
 - [RDKCentral Opensourcing Guidelines](https://github.com/rdkcentral/docs/blob/main/docs/opensourcing/opensource-guidelines.md)
 
 > **Note:** If your support request requires implementation work, a **ticket must be created** to allow for planning and tracking.
