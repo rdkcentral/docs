@@ -3,7 +3,7 @@ Audience: External Community
 
 This page provides Licensing and Copyright Guidelines for adding code to the RDK Code Management Repository.
 
-A list of approved licenses and unapproved licenses for included snippets may be accessed [here](https://github.com/rdkcentral/docs/wiki/ROG_LicenseApprovals)
+A list of approved licenses and unapproved licenses for included snippets may be accessed [here](https://github.com/rdkcentral/docs/wiki/ROG_LicenseApprovals) 
 
 **AI Generated Code:** Contributions generated in whole or in part by AI are not considered “original creations” (required by Section 5 of the CLA) and therefore may not be accepted. Note this is currently under review by legal.
 
