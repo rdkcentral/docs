@@ -59,11 +59,11 @@ All contributions must begin with a GitHub Issue that is reviewed and approved b
 
 ## Community Issue Repository for Contributions
 
-To simplify the contribution process and ensure consistent tracking, the community uses a community issue repository: project-community for all incoming contributions.
+To simplify the contribution process and ensure consistent tracking, the community uses a community issue repository: rdk-community-contributions for all incoming contributions.
 
 All contributors should create their GitHub Issue in the designated Community Issue Repository:
 
-**rdkcentral/project-community**
+**rdkcentral/rdk-community-contributions**
 
 This repository serves as the single-entry point and system of record for contribution tracking, regardless of how many component repositories are involved.
 
@@ -82,10 +82,10 @@ Using a single, default anchor repository provides the following benefits:
 
 ## How Contributions Are Tracked Using the Community Issue Repository
 
-- One GitHub Issue is created in the project-community repository
+- One GitHub Issue is created in the rdk-community-contributions repository
 - This issue captures all the required mandatory fields
 - All pull requests raised in individual component repositories must reference this GitHub issue
-- Example: “Related to rdkcentral/project-community#123”
+- Example: “Related to rdkcentral/rdk-community-contributions#123”
 
 The GitHub issue remains the single source of truth throughout the lifecycle of the contribution.
 
@@ -105,7 +105,7 @@ This ensures reviewers and maintainers have a complete, end-to-end view of the c
 
 ## Friendly Reminder to Contributors
 
-Creating the issue in the project-community repository helps the Contribution Intake Team respond faster and more consistently.
+Creating the issue in the rdk-community-contributions repository helps the Contribution Intake Team respond faster and more consistently.
 
 ---
 
