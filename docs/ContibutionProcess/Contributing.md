@@ -188,9 +188,9 @@ autonumber
 participant C as Contributor
 participant CT as Contribution Team
 participant CO as Component Owner
-participant GR as Project Community Repo
-participant CCR as Code Contribution Repo
-participant FR as Forked Repo
+participant GR as rdk-community-contributions Repo
+participant CCR as Code Contribution Repo(s)
+participant FR as Forked Repo(s)
 
 C->>GR: Create contribution issue
 GR-->>CT: Notify new issue
