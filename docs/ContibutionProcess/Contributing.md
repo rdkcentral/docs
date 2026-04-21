@@ -250,7 +250,7 @@ After the issue is created (or once alignment is reached), the contributor:
 
 ### 3. Pull Request Is Raised from the Fork
 
-A Pull Request (PR) is raised from the forked repository to the default branch of the upstream RDKB repository.
+A Pull Request (PR) is raised from the forked repository to the default branch of the upstream code repository.
 
 Requirements:
 - The PR must include a link to the previously created GitHub issue  
@@ -278,7 +278,7 @@ The team is responsible for:
 
 ### 5. Build Creation from Forked PR
 
-RDKB components support generating builds directly from forked PRs.
+Build creation done directly from forked PRs.
 
 Actions:
 - Builds are created using the submitted PR code
