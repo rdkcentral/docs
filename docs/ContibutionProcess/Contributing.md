@@ -175,11 +175,197 @@ To help reviewers quickly understand your contribution, we encourage you to prov
 
 ## Contribution Workflow:
 
-### Standard Workflow:
+## Simplified Fork-Based PR Workflow (Default)
 
-### Standard Contribution Workflow – Step-by-Step Explanation:
+> **Purpose:**  
+> This workflow is the **default and recommended approach for small, low‑risk contributions**, such as:
+> - Bug fixes
+> - Documentation updates
+> - Code cleanups or formatting changes
+> - Minor refactoring with no functional impact
+>
+> For feature development or larger efforts requiring extended design, testing, and coordination, refer to the **Standard Development Workflow**.
 
-The following steps outline the agreed contribution workflow once a GitHub Issue is created.
+---
+
+### Overview
+
+The Simplified Fork-Based PR Workflow allows contributors to make isolated changes using a forked repository while ensuring code quality through automated builds and structured reviews.
+
+This workflow is intentionally lightweight to enable faster turnaround while maintaining necessary quality gates.
+
+
+```mermaid
+flowchart TD
+    A[Contributor] --> B[Create GitHub Issue in<br/>rdk-community-contributions]
+
+    B --> C[Fork Code Repository]
+
+    C --> D[Raise PR from Fork<br/>Link GitHub Issue]
+
+    D --> E[Contribution Intake Team]
+
+    E --> F[Create PR Builds]
+
+    F --> G[Execute Required Testing]
+
+    G --> H[Share Results with<br/>Component Owner]
+
+    H -->|Review Comments| I[Contributor Updates PR]
+    I --> D
+
+    H -->|Approved| J[Merge PR to Default Branch]
+
+    J --> K[Update & Close GitHub Issue]
+```
+
+## Step-by-Step Explanation
+
+### 1. Contributor Creates a GitHub Issue
+
+The workflow begins when the contributor creates a GitHub issue in the  
+`rdk-community-contributions` repository.
+
+This issue is used for:
+- Problem statement
+- Design discussion
+- Proposal evaluation
+- Tracking progress and decisions
+
+No code changes are made at this stage.
+
+**Purpose:** Discussion, tracking, and planning
+
+---
+
+### 2. Contributor Forks the Code Repository
+
+After the issue is created (or once alignment is reached), the contributor:
+- Forks the relevant code repository
+- Implements the required code changes in the fork
+
+**Purpose:** Prepare implementation in an isolated fork
+
+---
+
+### 3. Pull Request Is Raised from the Fork
+
+A Pull Request (PR) is raised from the forked repository to the default branch of the upstream RDKB repository.
+
+Requirements:
+- The PR must include a link to the previously created GitHub issue  
+  (for example: `Fixes #<issue-number>`)
+
+**Purpose:** Submit code changes for review and validation
+
+**Key Rule:**  
+Pull Requests represent implementation, not discussion.
+
+---
+
+### 4. Contribution Intake Team Takes Ownership
+
+The Contribution Intake Team reviews the PR for completeness and scope.
+
+The team is responsible for:
+- Coordinating builds
+- Driving test execution
+- Acting as a bridge between the contributor and component owners
+
+**Purpose:** Intake, coordination, and validation enablement
+
+---
+
+### 5. Build Creation from Forked PR
+
+RDKB components support generating builds directly from forked PRs.
+
+Actions:
+- Builds are created using the submitted PR code
+
+**Purpose:** Validate the contribution in a realistic build environment
+
+---
+
+### 6. Testing and Validation
+
+Required testing is executed based on:
+- Component impact
+- Change complexity
+- Platform requirements
+
+Any issues identified are documented and communicated to the contributor.
+
+**Purpose:** Ensure quality, stability, and compatibility
+
+---
+
+### 7. Review by Component Owner
+
+Build artifacts, test results, and PR details are shared with the Component Owner.
+
+The Component Owner reviews:
+- Code quality
+- Test outcomes
+- Design alignment
+
+**Purpose:** Gatekeeping and technical approval
+
+---
+
+### 8. PR Review Feedback and Iteration
+
+Review comments are added directly to the Pull Request.
+
+The contributor:
+- Addresses review comments
+- Pushes fixes to the same PR
+
+This cycle continues until all concerns are resolved.
+
+**Purpose:** Iterative improvement
+
+**Rule:**  
+Do not open new PRs for fixes.
+
+---
+
+### 9. Merge to Default Branch
+
+Once the PR is approved:
+- The PR is merged into the default branch
+- The contribution becomes part of the official codebase
+
+**Purpose:** Final integration
+
+---
+
+### 10. Issue Update and Closure
+
+The original GitHub issue is updated with:
+- Merge details
+- Final status
+
+The issue is closed once the contribution lifecycle is complete.
+
+**Purpose:** Close the tracking loop
+
+---
+
+## Summary of Responsibilities
+
+- **GitHub Issues:** Discussion, tracking, and planning
+- **Pull Requests:** Code changes and implementation
+- **Contributor:** Code updates and review fixes
+- **Contribution Intake Team:** Builds, testing, and coordination
+- **Component Owner:** Review, approval, and merge decision
+``
+---
+
+
+## Feature Based Contribution Workflow:
+
+The following steps outline the agreed contribution workflow once a GitHub Issue is created for feature based contributions.
 
 ```mermaid
 sequenceDiagram
