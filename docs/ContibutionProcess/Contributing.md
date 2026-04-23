@@ -6,7 +6,7 @@
 
 ### Purpose
 
-This document describes the community contribution process agreed for accepting external contributions into monitored GitHub repositories, based on Feature-branch-first model.
+This document describes the community contribution process agreed for accepting external contributions into monitored GitHub repositories.
 
 The objective of this process is to:
 
@@ -25,21 +25,7 @@ This process uses a GitHub Issue as the single-entry point for all community con
 - All contributions must be tracked, reviewed, and validated before merging into develop branch.
 - CI, security scans, and integration builds must run only on trusted branches.
 - The process should remain predictable, auditable, and scalable as contribution volume grows.
-- GitHub issues will be the standard way of tracking GitHub contributions (needs discussion)
-
----
-
-## Technical Rationale for the Feature-Branch-First Model:
-
-The feature-branch-first model introduces a controlled integration layer between external contributions and the main development branch (develop), enabling structured validation and governance.
-
-By routing all contributions through a dedicated feature branch, the workflow ensures that:
-
-- Changes are isolated from active development until they pass review and validation.
-- Multi-repository contributions can be coordinated and tested together before promotion.
-- CI/CD pipelines, security scans, and compliance checks can be executed without exposing sensitive infrastructure.
-- Dependency alignment and integration risks are reduced prior to merging into develop.
-- Rollback and recovery are simpler, as incomplete or failing changes remain contained.
+- GitHub issues will be the standard way of tracking GitHub contributions.
 
 ---
 
@@ -190,7 +176,7 @@ To help reviewers quickly understand your contribution, we encourage you to prov
 
 ### Overview
 
-The Simplified Fork-Based PR Workflow allows contributors to make isolated changes using a forked repository while ensuring code quality through automated builds and structured reviews.
+The Simplified Fork-Based PR Workflow allows contributors to make isolated changes using a forked repository while ensuring code quality through builds and structured reviews.
 
 This workflow is intentionally lightweight to enable faster turnaround while maintaining necessary quality gates.
 
@@ -212,11 +198,11 @@ flowchart TD
     G --> H[Share Results with<br/>Component Owner]
 
     H -->|Review Comments| I[Contributor Updates PR]
-    I --> D
+    I --> E
 
-    H -->|Approved| J[Merge PR to Default Branch]
+    H -->|Approved| J[Component Owner<br/>merges to<br/>default branch]
 
-    J --> K[Update & Close GitHub Issue]
+    J --> K[Update & Close<br/>GitHub Issue]
 ```
 
 ## Step-by-Step Explanation
@@ -234,16 +220,18 @@ This issue is used for:
 
 No code changes are made at this stage.
 
+**Actor:** Contributor<br/>
 **Purpose:** Discussion, tracking, and planning
 
 ---
 
 ### 2. Contributor Forks the Code Repository
 
-After the issue is created (or once alignment is reached), the contributor:
+After the issue is created, the contributor:
 - Forks the relevant code repository
 - Implements the required code changes in the fork
 
+**Actor:** Contributor<br/>
 **Purpose:** Prepare implementation in an isolated fork
 
 ---
@@ -256,6 +244,7 @@ Requirements:
 - The PR must include a link to the previously created GitHub issue  
   (for example: `Fixes #<issue-number>`)
 
+**Actor:** Contributor<br/>
 **Purpose:** Submit code changes for review and validation
 
 **Key Rule:**  
@@ -272,6 +261,7 @@ The team is responsible for:
 - Driving test execution
 - Acting as a bridge between the contributor and component owners
 
+**Actor:** Contribution Intake Team<br/>
 **Purpose:** Intake, coordination, and validation enablement
 
 ---
@@ -283,6 +273,7 @@ Build creation done directly from forked PRs.
 Actions:
 - Builds are created using the submitted PR code
 
+**Actor:** Contribution Intake Team<br/>
 **Purpose:** Validate the contribution in a realistic build environment
 
 ---
@@ -296,6 +287,7 @@ Required testing is executed based on:
 
 Any issues identified are documented and communicated to the contributor.
 
+**Actor:** Contribution Intake Team<br/>
 **Purpose:** Ensure quality, stability, and compatibility
 
 ---
@@ -309,13 +301,14 @@ The Component Owner reviews:
 - Test outcomes
 - Design alignment
 
+**Actor:** Component Owner<br/>
 **Purpose:** Gatekeeping and technical approval
 
 ---
 
 ### 8. PR Review Feedback and Iteration
 
-Review comments are added directly to the Pull Request.
+Review comments are added directly to the Pull Request by component owner.
 
 The contributor:
 - Addresses review comments
@@ -323,6 +316,7 @@ The contributor:
 
 This cycle continues until all concerns are resolved.
 
+**Actor:** Contributor<br/>
 **Purpose:** Iterative improvement
 
 **Rule:**  
@@ -336,6 +330,7 @@ Once the PR is approved:
 - The PR is merged into the default branch
 - The contribution becomes part of the official codebase
 
+**Actor:** Component Owner<br/>
 **Purpose:** Final integration
 
 ---
@@ -348,6 +343,7 @@ The original GitHub issue is updated with:
 
 The issue is closed once the contribution lifecycle is complete.
 
+**Actor:** Contribution Intake Team<br/>
 **Purpose:** Close the tracking loop
 
 ---
@@ -359,11 +355,25 @@ The issue is closed once the contribution lifecycle is complete.
 - **Contributor:** Code updates and review fixes
 - **Contribution Intake Team:** Builds, testing, and coordination
 - **Component Owner:** Review, approval, and merge decision
-``
+
 ---
 
 
 ## Feature Based Contribution Workflow:
+
+## Technical Rationale for the Feature Based Contribution Model:
+
+The feature-branch-first model introduces a controlled integration layer between external contributions and the main development branch (develop), enabling structured validation and governance.
+
+By routing all contributions through a dedicated feature branch, the workflow ensures that:
+
+- Changes are isolated from active development until they pass review and validation.
+- Multi-repository contributions can be coordinated and tested together before promotion.
+- CI/CD pipelines, security scans, and compliance checks can be executed without exposing sensitive infrastructure.
+- Dependency alignment and integration risks are reduced prior to merging into develop.
+- Rollback and recovery are simpler, as incomplete or failing changes remain contained.
+
+---
 
 The following steps outline the agreed contribution workflow once a GitHub Issue is created for feature based contributions.
 
