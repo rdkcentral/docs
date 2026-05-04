@@ -187,7 +187,7 @@ flowchart TD
 
     B --> C[Fork Code Repository]
 
-    C --> D[Raise PR from Fork<br/>Link GitHub Issue]
+    C --> D[Raise PR from Fork<br/> to the development branch<br/>&Link GitHub Issue]
 
     D --> E[Contribution Intake Team]
 
@@ -200,7 +200,7 @@ flowchart TD
     H -->|Review Comments| I[Contributor Updates PR]
     I --> E
 
-    H -->|Approved| J[Component Owner<br/>merges to<br/>default branch]
+    H -->|Approved| J[Component Owner<br/>merges to<br/>development branch]
 
     J --> K[Update & Close<br/>GitHub Issue]
 ```
@@ -238,7 +238,7 @@ After the issue is created, the contributor:
 
 ### 3. Pull Request Is Raised from the Fork
 
-A Pull Request (PR) is raised from the forked repository to the default branch of the upstream code repository.
+A Pull Request (PR) is raised from the forked repository to the development branch of the upstream code repository.
 
 Requirements:
 - The PR must include a link to the previously created GitHub issue  
@@ -324,10 +324,10 @@ Do not open new PRs for fixes.
 
 ---
 
-### 9. Merge to Default Branch
+### 9. Merge to Development Branch
 
 Once the PR is approved:
-- The PR is merged into the default branch
+- The PR is merged into the development branch
 - The contribution becomes part of the official codebase
 
 **Actor:** Component Owner<br/>
