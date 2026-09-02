@@ -168,7 +168,7 @@ Usually yes. “Required” indicates branch protection/ruleset policy is gating
 Contributors may not see full policy internals, but they will see:
 
 - Required check status in PR checks
-- Pull request feedback with a tally of signature status per commit author in the pr
+- Pull request feedback with a tally of signature status per commit author in the PR
 - Merge blocked until required checks pass
 
 In current implementations, the CLA check context often appears as `Signature / Check`.
