@@ -61,7 +61,7 @@ https://gist.github.com/rdkcmf-jenkins/c797df2d0f276bbae7c2b394e895c263
 
 ## Why is my PR blocked with a Required check?
 
-The `Required` label is applied by GitHub rulesets/branch protection policy, not by the CLA
+The `Required` designation is applied by GitHub rulesets/branch protection policy, not by the CLA
 workflow itself.
 
 When a ruleset requires the CLA check context (commonly `Signature / Check`), merge is blocked
@@ -168,7 +168,7 @@ Usually yes. “Required” indicates branch protection/ruleset policy is gating
 Contributors may not see full policy internals, but they will see:
 
 - Required check status in PR checks
-- Pull request feedback with a tally of signature status per commit author in the PR
+- A single PR comment with the signatory and nonsignatory commit authors
 - Merge blocked until required checks pass
 
 In current implementations, the CLA check context often appears as `Signature / Check`.
