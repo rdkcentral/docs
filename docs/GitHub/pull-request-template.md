@@ -103,6 +103,13 @@ checks them in this order):
 ## Security
 
 <!-- Do not disclose an unpatched vulnerability in a public pull request. Report it privately using the repository's security reporting process or GitHub Private Vulnerability Reporting, where enabled. Once disclosure is safe, describe any non-sensitive security impact here, or write "N/A". -->
+
+
+#### AI usage disclosure:
+<br>
+<!--
+State "YES" or "NO" to indicate whether generative AI was used. If YES, briefly describe how it was used.
+-->
 ```
 
 When a PR is opened through the GitHub web interface, GitHub pre-fills the PR
