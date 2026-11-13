@@ -2,7 +2,7 @@
 
 ## Community Contribution Process
 
-### GitHub Issue–Driven Contribution Model:
+### GitHub Issue/Jira–Driven Contribution Model:
 
 ### Purpose
 
@@ -15,7 +15,11 @@ The objective of this process is to:
 - Address CI, security, and compliance constraints inherent to fork-based contributions
 - Ensure an open, inclusive, and well‑structured experience that makes collaboration smooth for contributors and maintainers alike
 
-This process uses a GitHub Issue as the single-entry point for all community contributions.
+GitHub Issues are the recommended entry point for community contributions because they provide a convenient way to discuss proposals, track progress, and link related pull requests.
+
+Contributors who are more comfortable with the existing Jira-based process may continue to raise a Jira ticket as an alternative. Both approaches are supported, provided the contribution details are documented clearly, and the related pull requests are linked to the tracking item. Jira space: https://jira.rdkcentral.com/jira/projects/RDKBDEV/
+
+**Recommendation:** New contributors are encouraged to use the GitHub Issue-based process. Contributors who already use the Jira workflow are welcome to continue using it.
 
 ---
 
@@ -26,6 +30,8 @@ This process uses a GitHub Issue as the single-entry point for all community con
 - CI, security scans, and integration builds must run only on trusted branches.
 - The process should remain predictable, auditable, and scalable as contribution volume grows.
 - GitHub issues will be the standard way of tracking GitHub contributions.
+- GitHub Issues are the preferred way to initiate and track community contributions. Jira remains an accepted alternative for contributors who are more comfortable with the existing Jira-based process.
+- Regardless of the entry point, every contribution should have a clearly identifiable tracking item, and all related pull requests should be linked to it.
 
 ---
 
@@ -45,13 +51,15 @@ All contributions must begin with a GitHub Issue that is reviewed and approved b
 
 ## Community Issue Repository for Contributions
 
-To simplify the contribution process and ensure consistent tracking, the community uses a community issue repository: rdk-community-contributions for all incoming contributions.
+To simplify the contribution process and provide consistent tracking, the community uses the `rdkcentral/rdk-community-contributions` repository as the recommended entry point for GitHub-based contributions.
 
-All contributors should create their GitHub Issue in the designated Community Issue Repository:
+Contributors following the GitHub workflow should create their contribution issue in this repository.
 
 **rdkcentral/rdk-community-contributions**
 
 This repository serves as the single-entry point and system of record for contribution tracking, regardless of how many component repositories are involved.
+
+Contributors who prefer the existing Jira-based workflow may create and maintain their contribution ticket in Jira instead. In either case, please ensure that the contribution details are complete and that the tracking item can be easily identified throughout the review process.
 
 ---
 
@@ -68,12 +76,18 @@ Using a single, default anchor repository provides the following benefits:
 
 ## How Contributions Are Tracked Using the Community Issue Repository
 
+For contributions following the GitHub Issue-based process:
 - One GitHub Issue is created in the rdk-community-contributions repository
 - This issue captures all the required mandatory fields
 - All pull requests raised in individual component repositories must reference this GitHub issue
 - Example: “Related to rdkcentral/rdk-community-contributions#123”
 
-The GitHub issue remains the single source of truth throughout the lifecycle of the contribution.
+For contributors following the Jira-based process:
+- Create a Jira ticket containing the contribution details, proposed scope, and all mandatory information.
+- Link all related pull requests to the Jira ticket, and include the ticket reference in the PR description.
+- Keep the ticket updated as the contribution progresses through review, testing, and merging.
+
+Whichever approach you choose, the goal is the same: maintain clear traceability between the original contribution request, the implementation, review feedback, and the final outcome.
 
 ---
 
@@ -251,6 +265,36 @@ Requirements:
 Pull Requests represent implementation, not discussion.
 
 ---
+## PR Description – Mandatory Fields
+
+To help maintainers and reviewers understand, validate, and review contributions efficiently, **every pull request must include the following fields in its description.**
+
+Please use the exact field names shown below and provide meaningful details for each field.
+
+```markdown
+Description:
+[Clearly explain what the change does, which component or functionality is affected, and the intended outcome.]
+
+Reason for Change:
+[Explain why the change is needed. Include the problem being addressed, the motivation for the change, or the benefit it provides to the RDK stack.]
+
+Test Procedure:
+[Describe the tests performed, the steps required to reproduce or validate the change, and the results observed. If testing has not been performed, please state that clearly and explain why.]
+
+Risks:
+[Identify potential regressions, compatibility concerns, side effects, or impacts on other components. If no known risks have been identified, state that explicitly.]
+
+Priority:
+[Specify the priority and briefly explain its justification.]
+```
+**A few helpful reminders:**
+
+These five fields are mandatory for every PR, including bug fixes, feature contributions, enhancements, refactoring, and documentation changes.
+- Please provide specific information rather than leaving a field blank or using only a generic statement.
+- For documentation-only or other non-functional changes, briefly explain why runtime testing is not applicable in the Test Procedure field.
+- If additional context, test logs, screenshots, or supporting documents are available, please link them in the PR description.
+- Before submitting the PR, check that all five fields are present and complete. This helps reviewers understand the change without unnecessary back-and-forth.
+- A complete PR description makes the contribution easier to review and helps maintainers assess its value, test coverage, risk, and readiness for integration.
 
 ### 4. Contribution Intake Team Takes Ownership
 
@@ -308,11 +352,19 @@ The Component Owner reviews:
 
 ### 8. PR Review Feedback and Iteration
 
-Review comments are added directly to the Pull Request by component owner.
+Pull requests may receive review feedback from Component Owners, maintainers, other reviewers, and automated review tools such as GitHub Copilot.
 
-The contributor:
-- Addresses review comments
-- Pushes fixes to the same PR
+We encourage contributors to review all feedback carefully and use it as an opportunity to improve the quality, security, and maintainability of their contributions.
+
+As a contributor, please:
+- Review all comments on your PR, including comments from GitHub Copilot and other automated review tools.
+- Evaluate each comment to determine whether it identifies a valid issue, a potential risk, or a useful improvement.
+- Address the necessary comments by updating your code, tests, or documentation as appropriate.
+- If you believe a comment does not apply to your change or does not require a code modification, provide a brief explanation in the relevant conversation.
+- Resolve the corresponding review conversation once the concern has been addressed or an appropriate explanation has been provided, following the repository's review practices.
+- Push any required fixes to the same PR branch so that the existing PR is updated.
+
+**Please note:** Contributors are not expected to implement every review suggestion automatically. Some comments may be informational, optional, or not applicable to the proposed change. However, every review comment—including Copilot feedback—should be considered, and necessary issues should be addressed before the contribution is considered ready for approval.If you are unsure whether a suggestion is necessary, discuss it with the reviewer or Component Owner before proceeding.
 
 This cycle continues until all concerns are resolved.
 
@@ -568,10 +620,12 @@ GitHub security restrictions prevent secret-based workflows from running on fork
 
 ## Expectations from Contributors
 
-- Provide complete and accurate issue information
-- Follow feedback and review comments constructively
+- Provide complete and accurate contribution details in the GitHub Issue or Jira ticket, depending on the entry point chosen.
+- Include all five mandatory fields in every PR description: Description, Reason for Change, Test Procedure, Risks, and Priority.
+- Follow review feedback constructively, including comments from Component Owners, maintainers, and automated tools such as GitHub Copilot.
+- Evaluate all review comments, address necessary issues, and resolve conversations once the concern has been addressed or appropriately explained.
 - Submit relevant test cases alongside code
-- Keep pull requests focused and scoped to the approved issue
+- Keep pull requests focused and scoped to the approved issue/Jira
 
 ---
 
