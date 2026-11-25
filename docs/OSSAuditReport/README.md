@@ -26,13 +26,16 @@ Each detailed audit report includes:
 - Files containing patch entries count
 
 ### 2. Audit Table
-Complete table with the following columns:
+Complete table with the following nine columns:
 - **Repository:** GitHub repository name and layer
-- **File Path:** Full path to the audited file
+- **Layer:** Yocto layer designation
+- **Recipe:** Recipe name
+- **Path:** Full path to the audited file
 - **File Type:** File extension (bb, bbappend, conf, inc, patch, service, sh, etc.)
-- **Recipes:** Number of recipes referenced
-- **Patches:** Number of patches included
-- **Status:** Audit status (success, warning, error)
+- **SRC_URI:** Source URI reference
+- **LICENSE:** License information
+- **Patch:** Patch entries and related SRC_URI values
+- **Include:** Include file references
 
 ### 3. Audit Columns Documentation
 Detailed explanation of each column in the audit table.
@@ -45,23 +48,25 @@ List of repositories that failed to scan with error details.
 ### Minimal Report (in meta-oss-reference-release)
 **Location:** `meta-oss-reference-release/reports/oss-audit/`
 
-Contains summary information:
-- 4 summary tables (Files per repository, by layer, by type)
+Contains both summary information and detailed audit data:
+- Three summary tables (Files per repository, by layer, by type)
+- Full audit table with detailed file-by-file information
 - Repository scan failures
 - Size: ~7.5 KB
 
 **Format:** 
-- Markdown: `oss-audit.md`
-- JSON: `oss-audit.json`
+- Markdown: `oss-audit.md` - Contains summary tables plus complete audit table
+- JSON: `oss-audit.json` - Contains summary statistics only
 
 ### Detailed Report (in rdkcentral/docs)
-**Location:** `rdkcentral/docs/docs/OSS_Audit_Report/`
+**Location:** `rdkcentral/docs/docs/OSSAuditReport/`
 
-Contains complete audit information:
-- Full audit table with 500+ file entries
-- Detailed audit columns documentation
-- Monthly date-based filenames
+Contains detailed audit archive with monthly reports:
+- Full audit table with all file entries
+- Complete audit table in Markdown format with date-based filenames
+- Monthly date-based filenames: `oss_audit_report_YYYY-MM-DD.md`
 - Size: ~4.4 MB per report
+- Retention: Monthly reports accumulate for historical analysis
 
 ## Finding Reports
 
@@ -88,18 +93,38 @@ Reports are generated automatically by GitHub Actions workflow:
 
 **Workflow:** `.github/workflows/oss-audit.yml` (in meta-oss-reference-release)
 
+**Publishing Behavior:**
+1. Minimal reports (oss-audit.md, oss-audit.json) are committed to `meta-oss-reference-release` on the develop branch
+2. Detailed markdown reports with date-based filenames (oss_audit_report_YYYY-MM-DD.md) are committed to `rdkcentral/docs` with monthly archive
+3. Both reports use the same underlying audit data, with different presentation formats
+
 **Process:**
 1. Clones all configured repositories
 2. Scans for Yocto recipes and supporting files
-3. Generates minimal report (meta-oss-reference-release)
-4. Generates detailed report (rdkcentral/docs) with date-based filename
-5. Commits both reports to their respective repositories
+3. Generates minimal reports (oss-audit.md, oss-audit.json) in meta-oss-reference-release
+4. Generates dated detailed markdown report in rdkcentral/docs with format: `oss_audit_report_YYYY-MM-DD.md`
+5. Commits minimal reports to meta-oss-reference-release/develop
+6. Commits detailed report to rdkcentral/docs/docs/OSSAuditReport/ on main branch
 
 ## Configuration
 
 Repositories to audit are configured in:
-- File: `configs/oss_audit_repos.json` (in meta-oss-reference-release)
-- Format: JSON array with repository information
+- **File:** `configs/oss_audit_repos.json` (in meta-oss-reference-release)
+- **Format:** JSON object (not an array) with the following structure:
+  ```json
+  {
+    "authorized_repositories": [
+      {
+        "repository": "owner/repo",
+        "layer": "layer_name",
+        ...
+      }
+    ],
+    "audited_extensions": [...],
+    "reporting": {...}
+  }
+  ```
+- **Key Structure:** Object with `authorized_repositories` array containing repository configurations, plus audited_extensions and reporting settings
 
 ## Maintenance
 
